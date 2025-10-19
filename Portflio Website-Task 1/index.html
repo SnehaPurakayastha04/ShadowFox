@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar">
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="#" class="navbar-brand">Sneha Purakayastha's</a>
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#project" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#certification" class="nav-link">Certifications</a></li>
+                <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contacts</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--Hero section-->
+    <div class="hero-section mt-3">
+     <div class="image-side card"><img src="static/images/Self-image.jpeg" alt="My-profile-image" class="profile-img"></div>
+        <div class="content-side"> 
+            <div class="content-side-header">
+            <h1>Welcome to my digital space!</h1><br>
+            </div>
+            <h1 id="name">I'm Sneha</h1>
+            <h4 id="typingText" class="mt-2"></h4>
+            <a href="#contact" class="btn btn-contact mt-4">Get in Touch</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        //Text typing animation
+        const typingText=document.getElementById('typingText');
+        const texts=[
+        "CSE Student"," Data Science Enthusiast",
+        "Website Developer","Cybersecurity Learner"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+        if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 1500; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500; // Pause before starting next text
+            }
+            
+            setTimeout(typeText, typingSpeed);
+        }
+        typeText()
+
+    </script>
+    <!--About Me-->
+    <section id="about" class="mt-3">
+        <h1>About Me</h1>
+        <div class="meet-me mt-3">
+        <p>Hi! I am<strong> Sneha Purakayastha</strong>, currently pursuing a Bachelor of Engineering in Computer Science and Engineering from University Institute Of Technology, Burdwan and
+            a BS degree in Data Science from IIT Madras. I have a<strong> keen interest</strong> in Cybersecurity and Web Development. I enjoy exploring how technology shapes the world and <strong>love building</strong> creative,
+            secure, and user-friendly digital experiences.
+        </p>
+        <p>Beyond academics, I have completed the 7th year(Ratna) in art, and I enjoy exploring the intersection of technology and creativity.
+            I like to work on projects that<strong> combine</strong> technical skills with artistic expression while also <strong>deepening</strong> my understanding of cybersecurity, aiming to create <strong>innovative and meaningful</strong> experiences.
+        </p>
+        </div>
+    </section>
+    <!--Skills section-->
+    <section id="skills" class="mt-3">
+        <h1>Skills & Proficiency</h1>
+        <div class="skill-container">
+            <div class="center"><h2>Creating With Code</h2>
+            <p>Tap a skill to learn more</p></div>
+            <div class="skill-info" id="skillInfo">
+            <h3 id="skillName"></h3>
+            <p id="skillCategory"></p>
+            <p id="skillDescription"></p>
+        </div>
+        <div class="skills-rows">
+            <!--Row 1-->
+            <div class="skills-row">
+            <div class="planet" data-skill="SQL" data-category="Database" data-description="Database management and query optimization">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="HTML">
+            </div>
+            <div class="planet" data-skill="Flask" data-category="Web Framework" data-description="Python web framework for building applications">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+      </div>
+      <div class="planet" data-skill="Bootstrap" data-category="CSS Framework" data-description="Frontend framework for responsive designs">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" alt="Bootstrap">
+      </div>
+      <div class="planet" data-skill="MATLAB" data-category="Technical Computing" data-description="Numerical computing and data analysis">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB">
+      </div>
+      <div class="planet" data-skill="Python" data-category="Programming Language" data-description="General purpose programming and data science">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      </div>
+            </div>
+        <!--Row 2-->
+        <div class="skills-row">
+      <div class="planet" data-skill="HTML" data-category="Markup Language" data-description="Structure and content of web pages">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      </div>
+      <div class="planet" data-skill="CSS" data-category="Styling Language" data-description="Styling and layout of web pages">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      </div>
+      <div class="planet" data-skill="JavaScript" data-category="Programming Language" data-description="Client-side web development and interactivity">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+      </div>
+      <div class="planet" data-skill="NumPy" data-category="Python Library" data-description="Numerical computing and array operations">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="NumPy">
+      </div>
+      <div class="planet" data-skill="Pandas" data-category="Python library" data-description="Data manipulation and analysis">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" alt="Pandas">
+      </div>   
+        </div>
+        </div>
+    </section>
+    <!--Projects Section-->
+    <section id="project">
+        <h1 class="mb-3">Project Showcase</h1>
+        <div class="project-container">
+            <div class="carousel-track">
+            <div class="carousel-slide active">
+        <div class="project-card">
+            <h4 class="card-header">VehicleBay: Vehicle Parking management System</h4>
+            <p>A Flask-based web application to manage vehicle parking lots, bookings, and payments. This project is part of the IITM BS Degree - MAD 1 Project.
+            It enables users to reserve parking spots and allows admins to manage parking lots, monitor occupancy, and track revenue. 
+            </p>
+            <div class="tech-stack">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                        <div class="buttons">
+                        <a href="https://github.com/SnehaPurakayastha04/Vehicle_Parking_App" class="btn btn-contact">Github</a>
+                        <a href="https://drive.google.com/file/d/1JyiISaTVysNbeVDOipFs6wP_RQiN4Vke/view?usp=sharing" class="btn btn-contact">Demo</a>
+                        </div>
+            </div>
+        </div>
+        <div class="carousel-slide">
+        <div class="project-card">
+            <h4 class="card-header">Face Recognition & Gender classification</h4>
+            <p>This project aims to develop deep learning models capable of performing reliable face recognition and gender classification even in challenging visual environments such as blur, low-light, rain, fog, and overexposure. This project was built as part of the COMSYS Hackathon-5.</p>
+            <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
+                        <a href="https://github.com/SnehaPurakayastha04/Comsys_Hackathon" class="btn btn-contact">Github</a>
+        </div>
+        </div>
+        </div>
+      <!-- Navigation Arrows -->
+        <button class="carousel-btn prev-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="carousel-btn next-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        
+        <!-- Dots Indicator -->
+        <div class="carousel-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+        </div>
+        </div>
+        </div>
+    </section>
+    <script>
+
+        class ProjectCarousel {
+    constructor() {
+        this.currentSlide = 0;
+        this.slides = document.querySelectorAll('.carousel-slide');
+        this.dots = document.querySelectorAll('.dot');
+        this.track = document.querySelector('.carousel-track');
+        this.prevBtn = document.querySelector('.prev-btn');
+        this.nextBtn = document.querySelector('.next-btn');
+        
+        this.init();
+    }
+    
+    init() {
+        // Add event listeners
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prevSlide();
+            if (e.key === 'ArrowRight') this.nextSlide();
+        });
+        
+        // Touch swipe for mobile
+        this.addTouchSupport();
+        
+        // Auto-advance
+        this.startAutoAdvance();
+    }
+    
+    showSlide(n) {
+        // Hide all slides
+        this.slides.forEach(slide => slide.classList.remove('active'));
+        this.dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Show current slide
+        this.slides[n].classList.add('active');
+        this.dots[n].classList.add('active');
+        this.currentSlide = n;
+    }
+    
+    nextSlide() {
+        let next = this.currentSlide + 1;
+        if (next >= this.slides.length) {
+            next = 0;
+        }
+        this.showSlide(next);
+    }
+    
+    prevSlide() {
+        let prev = this.currentSlide - 1;
+        if (prev < 0) {
+            prev = this.slides.length - 1;
+        }
+        this.showSlide(prev);
+    }
+    
+    goToSlide(n) {
+        this.showSlide(n);
+    }
+    
+    addTouchSupport() {
+        let startX = 0;
+        let endX = 0;
+        
+        this.track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        this.track.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            this.handleSwipe(startX, endX);
+        });
+    }
+    
+    handleSwipe(startX, endX) {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                this.nextSlide(); // Swipe left
+            } else {
+                this.prevSlide(); // Swipe right
+            }
+        }
+    }
+    
+}
+document.addEventListener('DOMContentLoaded', () => {
+    new ProjectCarousel();
+});
+    </script>
+
+
+    <!--Certification Section-->
+    <section id="certification">
+    <h1>Certifications Gallery</h1>
+    <p class="section-subtitle">Click on any certification to view details</p>
+    
+    <div class="certifications-gallery">
+        <!-- Card 1 -->
+        <div class="cert-card" onclick="openModal(0)">
+            <div class="cert-icon">🎓</div>
+            <h4>Programming & Data Science</h4>
+            <p>Foundation level certification from IIT Madras</p>
+            <span class="cert-badge">Data Science</span>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="cert-card" onclick="openModal(1)">
+            <div class="cert-icon">🌐</div>
+            <h4>Webpage Designing</h4>
+            <p>Certificate of Merit in web development</p>
+            <span class="cert-badge">Web Dev</span>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="cert-card" onclick="openModal(2)">
+            <div class="cert-icon">💼</div>
+            <h4>Computer Applications with GST</h4>
+            <p>Grade 'A' in MS Office & GST Accounting</p>
+            <span class="cert-badge">Basic & GST</span>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="cert-card" onclick="openModal(3)">
+            <div class="cert-icon">🔒</div>
+            <h4>Ethical Hacking</h4>
+            <p>Cybersecurity fundamentals and protocols</p>
+            <span class="cert-badge">Ethical Hacking</span>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="cert-card" onclick="openModal(4)">
+            <div class="cert-icon">🛡️</div>
+            <h4>Cybersecurity Internship</h4>
+            <p>Professional internship completion</p>
+            <span class="cert-badge">Cybersecurity</span>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="cert-card" onclick="openModal(5)">
+            <div class="cert-icon">🖌️</div>
+            <h4>Kala Ratna in Fine Arts</h4>
+            <p>First Division in Painting</p>
+            <span class="cert-badge">Art</span>
+        </div>
+    </div>
+</section>
+
+<!-- Expanded Modal -->
+<div id="certModal" class="cert-modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        
+        <div class="modal-image">
+            <img id="modalImage" src="" alt="Certificate">
+        </div>
+        
+        <div class="modal-details">
+            <h2 id="modalTitle">Certification Title</h2>
+            <div class="cert-meta">
+                <span class="issuer" id="modalIssuer">Issuing Organization</span>
+                <span class="badge" id="modalBadge">Category</span>
+            </div>
+            <p id="modalDescription">Certification description will appear here.</p>
+            
+            <div class="modal-actions">
+                <button class="action-btn close-details" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+   <script>
+    // Array of certificate data
+    const certifications = [
+        {
+            image: "static/images/IITM_Foundation.jpeg",
+            title: "Foundation level in Programming and Data Science",
+            issuer: "Indian Institute of Technology Madras",
+            description: "Successfully completed the foundational level in Programming and Data Science offered by IIT Madras.",
+            badge: "Data Science"
+        },
+        {
+            image: "static/images/Behala Web.jpeg",
+            title: "Certificate of Merit In Webpage Designing",
+            issuer: "The Institute of Computer Engineers, Behala College Computer Centre",
+            description: "Completed intensive training in Internet Basics, HTML Programming, and JavaScript using Personal Computer.",
+            badge: "Web Dev"
+        },
+        {
+            image: "static/images/MS_GST Accounting.jpeg",
+            title: "Certificate of Merit in Basic Computer Applications with GST",
+            issuer: "The Institute of Computer Engineers, Behala College Computer Centre",
+            description: "Awarded a Grade 'A' for successful completion of an intensive course covering fundamental and essential software tools. The curriculum provided hands-on training in DOS, MS Office 2010, Internet Basics, and practical GST Accounting, establishing a strong foundation in business and financial computing.",
+            badge: "Basic & GST"
+        },
+        {
+            image: "static/images/Technophilia.jpeg",
+            title: "Certificate in Ethical Hacking",
+            issuer: "Technophilia Solutions",
+            description: "Successfully completed a structured program in Ethical Hacking, gaining foundational knowledge and skills in cybersecurity principles, vulnerability assessment, and network security protocols under professional guidelines.",
+            badge: "Ethical Hacking"
+        },
+        {
+            image: "static/images/Externs.jpeg",
+            title: "Internship in Cybersecurity",
+            issuer: "Externsclub (Vareli Technac Pvt. Ltd.)",
+            description: "Successfully completed an internship in Cyber Security, demonstrating sincerity, enthusiasm, and strong performance throughout the tenure.",
+            badge: "Cybersecurity"
+        },
+        {
+            image: "static/images/ArtRatna.jpeg",
+            title: "Kala Ratna in Fine Arts (Painting)",
+            issuer: "Art Ratna (Sanskriti Bhawan)",
+            description: "Conferred the 'Kala Ratna' (Gem of Art) award in the First Division for excellence in Fine Arts, specializing in Painting. The institution is recognized by several prominent Indian universities, validating the high standard of artistic training and achievement.",
+            badge: "Art"
+        }
+    ];
+
+    // Get modal elements
+    const modal = document.getElementById('certModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalIssuer = document.getElementById('modalIssuer');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalBadge = document.getElementById('modalBadge');
+
+    // Function to open modal
+    function openModal(index) {
+        const cert = certifications[index];
+        
+        // Set modal content
+        modalImage.src = cert.image;
+        modalImage.alt = cert.title;
+        modalTitle.textContent = cert.title;
+        modalIssuer.textContent = cert.issuer;
+        modalDescription.textContent = cert.description;
+        modalBadge.textContent = cert.badge;
+        
+        // Display the modal
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Function to close modal
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+</script>    
+<!--Resume Section-->
+<section id="resume">
+    <div class="resume-container">
+        <h1 class="title">The Sneha Spectrum</h1>
+        <div class="sub-title"><h3>A snapshot of my journey and achievements</h3></div>
+        <div class="card-container">
+            <!--Academic Project Card-->
+            <div class="resume-card">
+                <div class="resume-header"><h3>Academic Projects</h3></div>
+                <div class="card-content">
+                <ul>
+                    <li>
+                        <strong>VehicleBay: Vehicle Parking Management System</strong>
+                        <p>A Flask-based web application to manage vehicle parking lots, bookings, and payments. This project is part of the IITM BS Degree - MAD 1 Project.
+            It enables users to reserve parking spots and allows admins to manage parking lots, monitor occupancy, and track revenue. </p>
+                    </li>
+                    <li><strong>Comsys_Hackathon: Face Recognition & Gender Classification</strong>
+                    <p>This project aims to develop deep learning models capable of performing reliable face recognition and gender classification even in challenging visual environments such as blur, low-light, rain, fog, and overexposure. This project was built as part of the COMSYS Hackathon-5.</p>
+                </li>
+                </ul>
+                </div>
+            </div>
+            <!--Education Card-->
+            <div class="resume-card">
+                <div class="resume-header"><h3>Education</h3></div>
+                <div class="card-content">
+                <ul>
+                    <li><strong>B.E. in Computer Science & Engineering </strong>
+                    <p>University Institute Of Technology, Burdwan University (2023-2027)</p></li>
+                    <li><strong>BS degree in Data Science</strong>
+                        <p>Indian Institute Of Technology, Madras (2024-2028)</p>
+                    </li>
+                    <li>
+                    <strong>Higher Secondary(Class 12)</strong><br>
+                    <p>Shaw Public School, ISC - 2022 | 87%</p>
+                </li>
+                    <li>
+                        <Strong>Seconday(Class 10)</Strong><br>
+                    <p>Shaw Public School, ICSE - 2020 | 91%</p>
+                </li>
+                </ul>
+                </div>
+            </div>
+            <!--Achievement Card-->
+            <div class="resume-card">
+                <div class="resume-header"><h3>Achievements</h3></div>
+                <div class="card-content">
+                <ul>
+                    <li><p>Successfully completed the <strong>foundational level in Programming and Data Science</strong> offered by IIT Madras.</p></li>
+                    <li><p>Conferred the <strong>'Kala Ratna' (Gem of Art) award in the First Division</strong> for excellence in Fine Arts, specializing in Painting.</p></li>
+                    <li><p>Awarded a <strong>Grade 'A' for successful completion of an intensive course covering fundamental and essential software tools</strong>. The curriculum provided hands-on training in DOS, MS Office 2010, Internet Basics, and practical GST Accounting, establishing a strong foundation in business and financial computing.</p></li>
+                </ul>
+            </div>
+            </div>
+            <!--Download Resume Card-->
+            <div class="resume-card">
+                <div class="resume-header"><h3>Download My Resume</h3></div>
+                <div class="card-content">
+                <p>Get a detailed version of my resume in pdf format</p>
+                <a href="static/assets/Sneha Purakayastha.pdf" class="download-btn btn" download>Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Contact Section -->
+<section id="contact">
+    <div class="contact-container">
+        <h1>Get In Touch</h1>
+        <p class="contact-subtitle">Let's work together to bring your ideas to life</p>
+        
+        <div class="contact-content">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Let's Connect</h2>
+                <p>I'm always open to discussing new opportunities, creative projects, or just having a chat about technology and cybersecurity!</p>
+                
+                <div class="contact-details">
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="snehapurakayastha30092004@gmail.com">snehapurakayastha30092004@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <a href="tel:+917980836822">+91 7980836822</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Kolkata, West Bengal, India</p>
+                        </div>
+                    </div>
+                    
+                    <!-- LinkedIn -->
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/sneha-purakayastha-707149308?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B12RYVoBSTECALpEQJI2OFA%3D%3D" target="_blank">linkedin.com/in/sneha-purakayastha-707149308</a>
+                        </div>
+                    </div>
+                    
+                    <!-- GitHub -->
+                    <div class="contact-item">
+                        <div class="contact-icon">🐙</div>
+                        <div class="contact-text">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/SnehaPurakayastha04" target="_blank">github.com/SnehaPurakayastha04</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Me a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="linkedin.com/in/sneha-purakayastha-707149308" target="_blank" class="social-link">
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/SnehaPurakayastha04" target="_blank" class="social-link">
+                <span>GitHub</span>
+            </a>
+            <a href="https://instagram.com/mahashweta_04" target="_blank" class="social-link">
+                <span>Instagram</span>
+            </a>
+        </div>
+    </div>
+</section>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon!`);
+            
+            contactForm.reset();
+        });
+    }
+});
+</script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded - initializing skills...');
+            
+            const planets = document.querySelectorAll('.planet');
+            const skillInfo = document.getElementById('skillInfo');
+            const skillName = document.getElementById('skillName');
+            const skillCategory = document.getElementById('skillCategory');
+            const skillDescription = document.getElementById('skillDescription');
+            
+            console.log('Found planets:', planets.length);
+            console.log('Skill info element:', skillInfo);
+            
+            planets.forEach(planet => {
+                planet.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent event bubbling
+                    
+                    // Get skill data
+                    const skill = this.getAttribute('data-skill');
+                    const category = this.getAttribute('data-category');
+                    const description = this.getAttribute('data-description');
+
+                    console.log('Clicked skill:', skill);
+                    
+                    // Update skill info display
+                    skillName.textContent = skill;
+                    skillCategory.textContent = "Category: " + category;
+                    skillDescription.textContent = description;
+                    
+                    // Show skill info
+                    skillInfo.classList.add('active');
+                    
+                    // Add active state to clicked planet
+                    planets.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Close skill info when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.planet') && !e.target.closest('.skill-info')) {
+                    skillInfo.classList.remove('active');
+                    planets.forEach(p => p.classList.remove('active'));
+                }
+            });
+        });
+
+    </script>
+    </body>
+</html>

@@ -21,7 +21,7 @@ The website is designed with a clean and modern layout, highlighting both visual
 - JavaScript  
 ---
 
-### ** Task 2: Ecommerce Website (Nykaa Clone Project)**
+### **Task 2: Ecommerce Website (Nykaa Clone Project)**
 A full-featured **Ecommerce Web Application** inspired by **Nykaa**, built using **React.js** for the frontend and **Flask (Python)** for the backend.  
 It supports **user authentication, product browsing, cart management, billing, and checkout functionality** — providing an end-to-end ecommerce experience.
 
@@ -29,11 +29,13 @@ It supports **user authentication, product browsing, cart management, billing, a
 [View Deployed Website](https://trendify-nykaclone.netlify.app)
 
 ####  Features
-- User Signup & Login  
-- Product Listing with Search and Filter  
-- Add to Cart and Bill Calculation  
-- Checkout Functionality  
-- Responsive UI  
+- User **Signup & Login** with secure authentication  
+- **Product Search** and **Category-based Filter**  
+- **Add to Cart**, **Bill Calculation**, and **Checkout**  
+- **User Reviews** for each product  
+- **Responsive UI** for mobile and desktop  
+- **RESTful Flask APIs** for data communication  
+- **SQLite Database** integration for storing users, products, and reviews  
 
 #### Tech Stack
 **Frontend:**

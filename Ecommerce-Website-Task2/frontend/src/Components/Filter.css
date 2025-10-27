@@ -1,0 +1,216 @@
+.filter-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e80071, #ff6b9c, #ffa36b, #e80071);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: -200% 0; }
+  50% { background-position: 200% 0; }
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(232, 0, 113, 0.1);
+}
+
+.filter-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e80071, #ff6b9c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.clear-btn {
+  background: linear-gradient(135deg, #e80071, #ff6b9c);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(232, 0, 113, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.clear-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.clear-btn:hover::before {
+  left: 100%;
+}
+
+.clear-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(232, 0, 113, 0.4);
+}
+
+.clear-btn:active {
+  transform: translateY(0);
+}
+
+.filter-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e8ecee;
+  border-radius: 12px;
+  background: white;
+  font-size: 14px;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23e80071' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+.filter-group select:hover {
+  border-color: #ffb8d9;
+  background-color: #fff9fc;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #e80071;
+  box-shadow: 0 0 0 3px rgba(232, 0, 113, 0.1);
+  background-color: #fff9fc;
+}
+
+.filter-group select::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-group select::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.filter-group select::-webkit-scrollbar-thumb {
+  background: #e80071;
+  border-radius: 3px;
+}
+
+.filter-group select::-webkit-scrollbar-thumb:hover {
+  background: #c4005a;
+}
+
+/* Active filter indicator */
+.filter-group:has(select:not([value=""]))::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #e80071;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    padding: 20px;
+    margin: 15px;
+    border-radius: 12px;
+  }
+  
+  .filter-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .filter-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .filter-group select {
+    padding: 10px 14px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .filter-container {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .filter-header h3 {
+    color: white;
+  }
+  
+  .filter-group label {
+    color: #ecf0f1;
+  }
+  
+  .filter-group select {
+    background-color: #2c3e50;
+    border-color: #34495e;
+    color: #ecf0f1;
+  }
+  
+  .filter-group select:hover {
+    background-color: #34495e;
+  }
+}

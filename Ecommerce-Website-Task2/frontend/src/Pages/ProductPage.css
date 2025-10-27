@@ -1,0 +1,135 @@
+.product-page {
+  min-height: 100vh;
+  background: #f8f8f8;
+  padding-bottom: 40px;
+}
+.brands-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 75vh;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .product-page {
+    padding: 0 10px 30px;
+  }
+
+  .brands-banner {
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .brands-container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-banner {
+    height: 200px;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .page-header {
+    padding: 20px 15px;
+  }
+}
+.carousel-slide img{
+    width: 100%;
+    height: 100vh;
+}
+.carousel-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  z-index: 10;
+  border:2px solid white;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+.diwali-marquee {
+  background: linear-gradient(135deg, #daa520, #ffd700, #b8860b);
+  background-size: 400% 400%;
+  padding: 15px 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 2px solid #FFDf00;
+  border-bottom: 2px solid #FFDf00;
+}
+.diwali-marquee::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+.marquee-content {
+  display: flex;
+  animation: marqueeScroll 10s linear infinite;
+  white-space: nowrap;
+  gap: 25px;
+}
+.marquee-item {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+  white-space: nowrap;
+}
+
+.marquee-text {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.diwali-marquee:hover .marquee-content {
+  animation-play-state: paused;
+}

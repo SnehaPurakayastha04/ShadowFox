@@ -1,0 +1,17 @@
+# Node / frontend
+node_modules/
+build/
+
+# Python / backend
+__pycache__/
+venv/
+instance/
+*.pyc
+*.pyo
+*.pyd
+*.db
+.env
+
+# OS / IDE files
+.DS_Store
+.vscode/

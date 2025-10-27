@@ -1,0 +1,15 @@
+venv/
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+
+# SQLite database (optional, if you don’t want to push it)
+ecommerce.db
+
+# Environment variables
+.env

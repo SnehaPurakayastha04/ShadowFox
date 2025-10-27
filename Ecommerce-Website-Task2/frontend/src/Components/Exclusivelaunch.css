@@ -1,0 +1,362 @@
+.exclusive-launch {
+  background: linear-gradient(135deg, #c3ccf6 0%,white 50%, #dbbdf9 100%);
+  margin: 40px 0;
+  padding: 50px 20px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.exclusive-launch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.launch-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.launch-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ec37e3, #7177f7);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(1, 75, 185, 0.4);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 4px 10px rgba(132, 158, 244, 0.845);
+  }
+  to {
+    box-shadow: 0 4px 15px rgba(4, 20, 144, 0.8), 0 0 30px rgba(19, 4, 239, 0.873);
+  }
+}
+.launch-title {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, rgb(240, 4, 4), #b83280, rgb(68, 163, 247));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.launch-subtitle {
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, rgb(14, 14, 236), rgb(242, 149, 164));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.launch-description {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.launch-features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 1px solid #667eea;
+}
+
+.feature-text {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.launch-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.launch-product-card {
+  background: white;
+  min-width: 50px;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.launch-product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.launch-product-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.product-image-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.product-badges {
+  position: absolute;
+  display: flex;
+  top: 15px;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.new-badge {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.wishlist-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.wishlist-btn:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: scale(1.1);
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.product-variant {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 1.1rem;
+}
+
+.rating-count {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.product-price {
+  margin-bottom: 20px;
+}
+
+.current-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #e80071;
+  margin-right: 10px;
+}
+
+.original-price {
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.shop-now-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shop-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.launch-footer {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.view-collection-btn {
+  background: white;
+  color: #667eea;
+  border: 2px solid white;
+  padding: 18px 40px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.view-collection-btn:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+}
+
+.early-access-text {
+  color: #9613e8;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .exclusive-launch {
+    padding: 30px 15px;
+    margin: 20px 0;
+  }
+
+  .launch-title {
+    font-size: 2.5rem;
+  }
+
+  .launch-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .launch-features {
+    gap: 15px;
+  }
+
+  .feature {
+    padding: 10px 15px;
+  }
+
+  .launch-products-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .view-collection-btn {
+    padding: 15px 30px;
+    font-size: 1rem;
+  }
+}
+.launch-product-card .view-reviews-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.launch-product-card .view-reviews-btn:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+.launch-product-card .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Consistent spacing between buttons */
+}

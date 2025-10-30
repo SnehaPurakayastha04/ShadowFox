@@ -54,7 +54,6 @@ It supports **user authentication, product browsing, cart management, billing, a
 |-----------|--------|---------|
 | Task 1 | Portfolio Website |  Completed |
 | Task 2 | Ecommerce Website (Nykaa Clone) | Completed |
-| Task 3 | Coming Soon |  Pending |
 
 ---
 

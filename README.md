@@ -32,8 +32,7 @@ It supports **user authentication, product browsing, cart management, billing, a
 - User **Signup & Login** with secure authentication  
 - **Product Search** and **Category-based Filter**  
 - **Add to Cart**, **Bill Calculation**, and **Checkout**  
-- **User Reviews** for each product  
-- **Responsive UI** for mobile and desktop  
+- **User Reviews** for each product   
 - **RESTful Flask APIs** for data communication  
 - **SQLite Database** integration for storing users, products, and reviews  
 
